@@ -1,8 +1,11 @@
 
 **Run project**
 ``git clone <>
+
 npm install
+
 npm i yarn
+
 npm run start:dev || yarn start``
 
 
@@ -30,6 +33,7 @@ nest g controller <name> --no-spec
 
 -Validation bằng pipe 
 npm install class-validator class-transformer --save
+
 yarn add class-validator class-transformer
 
 
