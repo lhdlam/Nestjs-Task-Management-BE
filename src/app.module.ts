@@ -6,7 +6,7 @@ import { TasksModule } from './tasks/tasks.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot(getTypeOrmConfig()),
-    TasksModule
+    TasksModule,
   ],
   controllers: [],
   providers: [],
