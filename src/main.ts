@@ -1,10 +1,19 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { Logger } from '@nestjs/common'
+import * as config from 'config'
 
 async function bootstrap() {
+  const serverConfig = config.get('server');
+  const logger = new Logger('bootstrap');
   const app = await NestFactory.create(AppModule);
-  const PORT = 3008;
+
+  if(process.env.NODE_ENV === 'development'){
+    app.enableCors();
+  }
+
+  const PORT = process.env.PORT || serverConfig.port;
   await app.listen(PORT);
-  console.log(`Run server is port: ${PORT}`);
+  logger.log(`Run server is port: ${PORT}`);
 }
 bootstrap();
