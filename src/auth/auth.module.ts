@@ -8,6 +8,7 @@ import { JwtModule } from '@nestjs/jwt'
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './jwt.strategy';
 import * as config from 'config'
+import { Task } from 'src/tasks/task.entity';
 
 const jwtConfig = config.get('jwt');
 
