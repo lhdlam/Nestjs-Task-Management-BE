@@ -16,12 +16,6 @@ export class UserRepository extends Repository<User> {
   async signUp(authCredentialsDto: AuthCredentialsDto): Promise<void>{
     const {username, password} = authCredentialsDto;
 
-    
-    // const exists = this.findOne({where: {username}});
-    // if (exists){
-    //   // 
-    // }
-
     const user = new User();
     user.username = username;
     user.salt = await bcrypt.genSalt();
